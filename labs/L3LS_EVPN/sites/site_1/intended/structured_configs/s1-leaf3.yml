@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -84,6 +90,15 @@ local_users:
   sha512_password: $6$arista$TroG6.1u5bixI9jIhEtINe2tY9vjtmpxlsGYPTPNjyKYS8kQnjbfb9Ef105qhdg6NqPlUERv1oth63CIGrA3x1
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDvzls5DQVQBi9Q8khwdnrQNLxzM+yS64JTCrKvyqAuUQkiafTOxqXi1zSaIDYXkuay9ca5fSplvuygweY2gmdX8Kh5LHQdbB59Ho58c2MTzU1kF/1PDxpz7KlpZ+cLBFh9DwsJVk1RONV9NXye2t/lorAsy4XR77nOWYi6+nDHvyep7HRQtuPRiIHJo7NSKBU801kCsrTxGWoecK23OpkSquZ+3nRdf5fWpk72/ch9iEXreoML5R7WNdvdkMArucGsnuJxKZiDV/Te7ZYIA7mB8onzRt/4d0gi+K10gR3ID/tbTbXYz0CXg/WhU0MTdGZ2vzaBdffsiyWQ5RyVUb0H
     arista@westpac-dc-avd-2-9ad3c0ca-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
